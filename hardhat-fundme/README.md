@@ -17,5 +17,6 @@ We then create some test folders, `unit` (for local hardhat and forked hardhat) 
 
 We also create scripts to test on the local hardhat node. We start the node by running `yarn hardhat node` then in another terminal, run the scripts.
 
----- Advanced Ideas ----
+**---- Advanced Ideas ----**
+
 Storage in Solidity: Storage is a huge array that stores in chronologically declared order, the global variables. Variables within a function lives throughout the function only and will not be stored in that array. For globally declared arrays, the length of the array is stored when it is declared and the content of the array is hash-mapped to some area of the storage array. Constants & immutables are not stored in array as it is already a pointer to that value. Reading and writing to storage takes a ton of gas. Gas cost depends on the [opcodes](https://ethereum.org/en/developers/docs/evm/opcodes/) executed within elements of the storage array. Append `s_` to variables stored to storage, as best practice to find areas of huge gas usage as saving and loading from storage takes a ton of gas. We can use `memory` instead, especially if there is a for-loop for arrays.
