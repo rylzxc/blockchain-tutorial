@@ -12,7 +12,7 @@ Notes:
 
 1. `document.getElementById("connectButton").innerHTML` tells us what to display if the condition is met/unmet.
 2. Using `type="module"` allows importing modules (in our case, ethers) into our code.
-3. We import the ethers library for easier import of modules into `index.js`.
+3. We import the ethers library as a [best practice and for security reasons](https://docs.ethers.org/v5/getting-started/#getting-started--importing--web-browser).
 4. We shift the `onClick` functions to `index.js` due to us using modules for script type (point 2).
 5. If encounter nonce error, reset account (to reset the nonce) then retry again as Metamask wouldn't know if we restarted the local blockchain or not. Restarting the local blockchain restarts its nonce too.
 6. If nothing to add between tags, just end it with a slash -> `<input .../>` == `<input></input>`.
